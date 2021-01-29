@@ -14,3 +14,6 @@ class TestAttraction(unittest.TestCase):
 
     def test_attraction_has_city(self):
         self.assertEqual("Tokyo", self.attraction.city)
+
+    def test_attraction_entry_fee_starts_false(self):
+        self.assertEqual(False, self.attraction.entry_fee)
