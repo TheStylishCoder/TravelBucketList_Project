@@ -10,3 +10,6 @@ class City:
 
     def mark_visited(self):
         self.visited = True
+
+    def mark_wishlist(self):
+        self.wishlist = True
