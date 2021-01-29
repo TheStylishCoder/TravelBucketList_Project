@@ -1,6 +1,7 @@
 import unittest
 from models.country import Country
 
+
 class TestCountry(unittest.TestCase):
 
     def setUp(self):
@@ -18,3 +19,11 @@ class TestCountry(unittest.TestCase):
 
     def test_country_wishlist_starts_false(self):
         self.assertEqual(False, self.country.wishlist)
+
+    def test_can_mark_visited(self):
+        self.country.mark_visited()
+        self.assertEqual(True, self.country.visited)
+    
+    def test_can_mark_wishlist(self):
+        self.country.mark_wishlist()
+        self.assertEqual(True, self.country.wishlist)

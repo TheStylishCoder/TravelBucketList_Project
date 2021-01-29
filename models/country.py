@@ -6,3 +6,10 @@ class Country:
         self.visited = visited
         self.wishlist = wishlist 
         self.id = id 
+
+    
+    def mark_visited(self):
+        self.visited = True
+
+    def mark_wishlist(self):
+        self.wishlist = True
