@@ -11,3 +11,6 @@ class TestAttraction(unittest.TestCase):
 
     def test_attraction_has_category(self):
         self.assertEqual("Place of Worship", self.attraction.category)
+
+    def test_attraction_has_city(self):
+        self.assertEqual("Tokyo", self.attraction.city)
