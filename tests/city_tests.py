@@ -12,3 +12,6 @@ class TestCity(unittest.TestCase):
 
     def test_city_has_attractions(self):
         self.assertEqual(3, len(self.city.attractions))
+
+    def test_city_has_country(self):
+        self.assertEqual("Japan", self.city.country)
