@@ -8,3 +8,6 @@ class TestAttraction(unittest.TestCase):
 
     def test_attraction_has_name(self):
         self.assertEqual("Sensoji Temple", self.attraction.name)
+
+    def test_attraction_has_category(self):
+        self.assertEqual("Place of Worship", self.attraction.category)
