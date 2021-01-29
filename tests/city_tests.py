@@ -21,3 +21,7 @@ class TestCity(unittest.TestCase):
 
     def test_city_wishlist_starts_false(self):
         self.assertEqual(False, self.city.wishlist)
+
+    def test_can_mark_visited(self):
+        self.city.mark_visited()
+        self.assertEqual(True, self.city.visited)
