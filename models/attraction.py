@@ -1,8 +1,8 @@
 class Attraction:
 
-    def __init__(self, name, category, entry_fee = false, city, id)
+    def __init__(self, name, category, city, entry_fee = False, id = None):
         self.name = name 
         self.category = category 
-        self.entry_fee = entry_fee
         self.city = city 
+        self.entry_fee = entry_fee
         self.id = id  
