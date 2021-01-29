@@ -18,3 +18,6 @@ class TestCity(unittest.TestCase):
 
     def test_city_visited_starts_false(self):
         self.assertEqual(False, self.city.visited)
+
+    def test_city_wishlist_starts_false(self):
+        self.assertEqual(False, self.city.wishlist)
