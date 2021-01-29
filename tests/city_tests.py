@@ -9,3 +9,6 @@ class TestCity(unittest.TestCase):
 
     def test_city_has_name(self):
         self.assertEqual("Tokyo", self.city.name)
+
+    def test_city_has_attractions(self):
+        self.assertEqual(3, len(self.city.attractions))
