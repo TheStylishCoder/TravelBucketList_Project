@@ -12,6 +12,7 @@ import repositories.review_repository as review_repository
 country_repository.delete_all()
 city_repository.delete_all()
 attraction_repository.delete_all()
+review_repository.delete_all()
 
 country1 = Country("Japan", True, True)
 country_repository.save(country1)
@@ -122,7 +123,16 @@ attraction_repository.save(attraction20)
 
 review1 = Review("Turtles", "Had a lovely time at this park and the best part was seeing the terrapins that live in the pond. It was great weather for October!", attraction12)
 review_repository.save(review1)
+review2 = Review("Kelvingrove", "Great park in the grounds of the museum. Found a fantastic pizza place across from the museum!", attraction19)
+review_repository.save(review2)
 
+
+# res = review_repository.select_all()
+# for review in res:
+#     print(review.__dict__)
+
+review1.title = "El Retiro"
+review_repository.update(review1)
 
 pdb.set_trace()
 
