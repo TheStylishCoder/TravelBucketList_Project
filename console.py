@@ -112,6 +112,12 @@ attraction_repository.save(attraction19)
 attraction20 = Attraction("Glasgow Cathedral", "Place of Worship", city10)
 attraction_repository.save(attraction20)
 
+# res = attraction_repository.select_all()
+# for attraction in res:
+#     print(attraction.__dict__)
+
+# attraction18.name = "V&A"
+# attraction_repository.update(attraction18)
 
 
 
