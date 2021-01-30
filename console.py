@@ -53,5 +53,12 @@ city_repository.save(city9)
 city10 = City("Glasgow", country5)
 city_repository.save(city10)
 
+# res = city_repository.select_all()
+# for city in res:
+#     print(city.__dict__)
+
+city10.name = "Edinburgh"
+city_repository.update(city10)
+
 pdb.set_trace()
 
