@@ -19,7 +19,12 @@ country_repository.save(country4)
 country5 = Country("United Kingdom")
 country_repository.save(country5)
 
-country_repository.select_all()
+res = country_repository.select_all()
+for country in res:
+    print(country.__dict__)
+
+country1.visited = False
+country_repository.update(country1)
 
 
 pdb.set_trace()

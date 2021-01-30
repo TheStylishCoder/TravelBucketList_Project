@@ -27,3 +27,18 @@ def select_all():
         country = Country(row['name'], row['visited'], row['wishlist'], row['id'])
         countries.append(country)
     return countries 
+
+def select(id):
+    country = None
+    sql = "SELECT * FROM countries WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)
+
+    if result is not None:
+        country = Country(result['name'], result['visited'], result['wishlist'], result['id'])
+    return country 
+
+def update(country):
+    sql = "UPDATE countries SET (name, visited, wishlist) = (%s, %s, %s) WHERE id = %s"
+    values = [country.name, country.visited, country.wishlist, country.id]
+    run_sql(sql, values)
