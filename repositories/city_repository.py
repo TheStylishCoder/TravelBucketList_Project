@@ -1,7 +1,11 @@
 from db.run_sql import run_sql
+
 from models.city import City
 from models.country import Country
+from models.attraction import Attraction
+
 import repositories.country_repository as country_repository
+
 
 
 def save(city):
@@ -47,3 +51,15 @@ def update(city):
     sql = "UPDATE cities SET (name, country_id, visited, wishlist) = (%s, %s, %s, %s) WHERE id = %s"
     values = [city.name, city.country.id, city.visited, city.wishlist, city.id]
     run_sql(sql, values)
+
+def attractions(city):
+    attractions = []
+
+    sql = "SELECT * FROM attractions WHERE city_id = %s"
+    values = [city.id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        attraction = Attraction(row['name'], row['category'], row['city_id'], row['entry_fee'], row['id'])
+        attractions.append(attraction)
+    return attractions

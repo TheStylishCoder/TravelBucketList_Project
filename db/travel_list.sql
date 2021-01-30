@@ -29,7 +29,7 @@ CREATE TABLE attractions (
 CREATE TABLE reviews (
     id SERIAL PRIMARY KEY,
     title VARCHAR(255),
-    content VARCHAR(255),
+    content VARCHAR(1500),
     attraction_id INT REFERENCES attractions(id) ON DELETE CASCADE
 );
 

@@ -7,6 +7,7 @@ from models.review import Review
 import repositories.country_repository as country_repository
 import repositories.city_repository as city_repository
 import repositories.attraction_repository as attraction_repository
+import repositories.review_repository as review_repository
 
 country_repository.delete_all()
 city_repository.delete_all()
@@ -119,6 +120,8 @@ attraction_repository.save(attraction20)
 # attraction18.name = "V&A"
 # attraction_repository.update(attraction18)
 
+review1 = Review("Turtles", "Had a lovely time at this park and the best part was seeing the terrapins that live in the pond. It was great weather for October!", attraction12)
+review_repository.save(review1)
 
 
 pdb.set_trace()
