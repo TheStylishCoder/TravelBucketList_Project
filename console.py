@@ -6,9 +6,11 @@ from models.review import Review
 
 import repositories.country_repository as country_repository
 import repositories.city_repository as city_repository
+import repositories.attraction_repository as attraction_repository
 
 country_repository.delete_all()
 city_repository.delete_all()
+attraction_repository.delete_all()
 
 country1 = Country("Japan", True, True)
 country_repository.save(country1)
@@ -57,8 +59,11 @@ city_repository.save(city10)
 # for city in res:
 #     print(city.__dict__)
 
-city10.name = "Edinburgh"
-city_repository.update(city10)
+# city10.name = "Edinburgh"
+# city_repository.update(city10)
+
+attraction1 = Attraction("Sensoji Temple", "Place of Worship", city1)
+attraction_repository.save(attraction1)
 
 pdb.set_trace()
 
