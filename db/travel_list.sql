@@ -15,7 +15,7 @@ CREATE TABLE cities (
     name VARCHAR(255),
     visited BOOLEAN,
     wishlist BOOLEAN,
-    country_id INT REFERENCES countries(id)
+    country_id INT REFERENCES countries(id) ON DELETE CASCADE
 );
 
 CREATE TABLE attractions (
@@ -23,14 +23,14 @@ CREATE TABLE attractions (
     name VARCHAR(255),
     category VARCHAR(255),
     entry_fee BOOLEAN,
-    city_id INT REFERENCES cities(id)
+    city_id INT REFERENCES cities(id) ON DELETE CASCADE
 );
 
 CREATE TABLE reviews (
     id SERIAL PRIMARY KEY,
     title VARCHAR(255),
     content VARCHAR(255),
-    attraction_id INT REFERENCES attractions(id)
+    attraction_id INT REFERENCES attractions(id) ON DELETE CASCADE
 );
 
     
