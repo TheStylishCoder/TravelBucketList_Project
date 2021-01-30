@@ -19,6 +19,8 @@ country_repository.save(country4)
 country5 = Country("United Kingdom")
 country_repository.save(country5)
 
+country_repository.select_all()
+
 
 pdb.set_trace()
 
