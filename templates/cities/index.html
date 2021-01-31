@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Cities</h1>
+
+{% for city in cities %}
+<p>Name: {{city.name}}</p>
+<p>Country: {{city.country.name}}</p>
+<p>Visited: {{city.visited}}</p>
+<p>Wishlist: {{city.wishlist}}</p>
+<br>
+{% endfor %}
+<br>
+  <a href="/city/new">Add City</a>
+  {% endblock %}
