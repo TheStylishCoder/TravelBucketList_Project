@@ -11,3 +11,9 @@ def cities():
     cities = city_repository.select_all()
     return render_template("cities/index.html", cities = cities)
 
+@cities_blueprint.route("/cities/<id>", methods=['GET'])
+def show(id):
+    city = city_repository.select(id)
+    attractions = city_repository.attractions(city)
+    return render_template("cities/show.html", city = city, attractions = attractions)
+    
