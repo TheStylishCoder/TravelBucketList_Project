@@ -30,3 +30,17 @@ def update_country(id):
     country = Country(name, visited, wishlist, id)
     country_repository.update(country)
     return redirect('/countries')
+
+@countries_blueprint.route("/countries/new", methods=['GET'])
+def new_country():
+    countries = country_repository.select_all()
+    return render_template("countries/new.html", all_countries = countries)
+
+@countries_blueprint.route("/countries", methods=['POST'])
+def create_country():
+    name = request.form['name']
+    visited = request.form['visited']
+    wishlist = request.form['wishlist']
+    country = Country(name, visited, wishlist)
+    country_repository.save(country)
+    return redirect("/countries")
