@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form action="/attractions" method="post">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Name" required autofocus>
+    </div>
+    <div>
+        <label for="category">Category:</label>
+        <input type="text" id="category" name="category" placeholder="Category" required>
+    </div>
+    <div>
+        <label for='city'>City:</label>
+        <select name='city_id' id='city'>
+            {% for city in cities %}
+                <option value="{{city.id}}">{{city.name}}</option>
+            {% endfor %}
+        </select>    
+    </div>
+    <div>
+        <label for="entry_fee">Entry Fee:</label>
+        <select name="entry_fee" id="entry_fee">
+            <option value="true">True</option>
+            <option value="false">False</option>
+        </select>
+    </div>
+    
+    
+    <button type="submit">Add Attraction</button>
+</form>
+
+{% endblock %}

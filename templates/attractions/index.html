@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Attractions</h1>
+
+{% for attraction in attractions %}
+<p>Name:<a href="/attractions/{{attraction.id}}"> {{attraction.name}}</a></p>
+<p>Category: {{attraction.category}}</p>
+<p>City: {{attraction.city.name}}</p>
+<p>Entry Fee: {{attraction.entry_fee}}</p>
+<a href="attractions/{{attraction.id}}/edit">Edit</a>
+<form action="/attraction/{{attraction.id}}/delete" method="POST"><button>Delete</button></form>
+<br>
+<br>
+{% endfor %}
+<br>
+
+
+  <a href="/attractions/new">Add Attraction</a>
+  {% endblock %}

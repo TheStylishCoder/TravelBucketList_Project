@@ -79,3 +79,15 @@ def wishlist():
         country = Country(row['name'], row['visited'], row['wishlist'], row['id'])
         countries.append(country)
     return countries
+
+# def search():
+#     countries = []
+
+#     sql = "SELECT * FROM countries WHERE name iLIKE '%=%s%'"
+#     values = [country.name]
+#     results = run_sql(sql, values)
+
+#     for row in results:
+#         country = Country(row['name'], row['visited'], row['wishlist'], row['id'])
+#         countries.append(country)
+#     return countries

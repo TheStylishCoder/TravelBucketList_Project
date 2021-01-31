@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for attraction in attractions %}
+    <p>Name: {{attraction.name}}</p>
+    <p>Category: {{attraction.category}}</p>
+    <p>City: {{attraction.city.name}}</p>
+    <p>Entry Fee: {{attraction.entry_fee}}</p>
+    <br>
+    <br>
+{% endfor %}
+
+
+
+{% endblock %}

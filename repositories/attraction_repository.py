@@ -46,3 +46,16 @@ def update(attraction):
     sql = "UPDATE attractions SET (name, category, city_id, entry_fee) = (%s, %s, %s, %s) WHERE id = %s "
     values = [attraction.name, attraction.category, attraction.city.id, attraction.entry_fee, attraction.id]
     run_sql(sql, values)
+
+def free_entry():
+    attractions = []
+
+    sql = "SELECT * FROM attractions WHERE entry_fee = %s"
+    values = [False]
+    results = run_sql(sql, values)
+
+    for row in results:
+        city = city_repository.select(row['city_id'])
+        attraction = Attraction(row['name'], row['category'], city, row['entry_fee'], row['id'])
+        attractions.append(attraction)
+    return attractions
