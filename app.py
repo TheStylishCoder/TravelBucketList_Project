@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 
 from controllers.review_controller import reviews_blueprint
 from controllers.attraction_controller import attractions_blueprint
