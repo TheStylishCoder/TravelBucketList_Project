@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form action="/countries/{{country.id}}" method="post">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" value="{{country.name}}" name="name" required autofocus>
+    </div>
+    <br>
+    <div>
+        <label for="visited">Visited:</label>
+        <select name="visited" id="visited">
+            <option value="true" {% if country.visited == True %} selected="selected" {% endif %}>True</option>
+            <option value="false" {% if country.visited == False %} selected="selected" {% endif %}>False</option>
+        </select>
+    </div>
+    <div>
+        <label for="wishlist">Wishlist:</label>
+        <select name="wishlist" id="wishlist">
+            <option value="true" {% if country.wishlist == True %} selected="selected" {% endif %}>True</option>
+            <option value="false" {% if country.wishlist == False %} selected="selected" {% endif %}>False</option>
+        </select>
+    </div>
+    <button type="submit">Edit Country</button>
+</form>
+
+{% endblock %}
