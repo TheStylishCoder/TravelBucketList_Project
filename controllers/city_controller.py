@@ -34,3 +34,23 @@ def update_city(id):
     city = City(name, country, visited, wishlist, id)
     city_repository.update(city)
     return redirect("/cities")
+
+@cities_blueprint.route("/cities/new", methods=['GET'])
+def new_city():
+    countries = country_repository.select_all()
+    return render_template("cities/new.html", countries = countries)
+
+@cities_blueprint.route("/cities", methods=['POST'])
+def create_city():
+    name = request.form['name']
+    country_id = request.form['country_id']
+    visited = request.form['visited']
+    wishlist = request.form['wishlist']
+    country = country_repository.select(country_id)
+    city = City(name, country, visited, wishlist)
+    city_repository.save(city)
+    return redirect('/cities')
+
+@cities_blueprint.route("/cities/<id>/delete", methods=['POST'])
+def delete_city(id):
+    
