@@ -67,3 +67,15 @@ def visited():
         country = Country(row['name'], row['visited'], row['wishlist'], row['id'])
         countries.append(country)
     return countries
+
+def wishlist():
+    countries = []
+
+    sql = "SELECT * FROM countries WHERE wishlist = %s"
+    values = [True]
+    results = run_sql(sql, values)
+
+    for row in results:
+        country = Country(row['name'], row['visited'], row['wishlist'], row['id'])
+        countries.append(country)
+    return countries

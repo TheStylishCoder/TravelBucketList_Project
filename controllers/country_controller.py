@@ -44,7 +44,3 @@ def create_country():
     country_repository.save(country)
     return redirect("/countries")
 
-@countries_blueprint.route("/visited")
-def show_visited():
-    countries = country_repository.visited()
-    return render_template("visited/index.html", countries = countries)

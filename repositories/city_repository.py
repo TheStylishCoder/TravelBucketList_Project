@@ -63,3 +63,29 @@ def attractions(city):
         attraction = Attraction(row['name'], row['category'], row['city_id'], row['entry_fee'], row['id'])
         attractions.append(attraction)
     return attractions
+
+def visited():
+    cities = []
+
+    sql = "SELECT * FROM cities WHERE visited = %s"
+    values = [True]
+    results = run_sql(sql, values)
+
+    for row in results:
+        country = country_repository.select(row['country_id'])
+        city = City(row['name'], country, row['visited'], row['wishlist'], row['id'])
+        cities.append(city)
+    return cities 
+
+def wishlist():
+    cities = []
+
+    sql = "SELECT * FROM cities WHERE wishlist = %s"
+    values = [True]
+    results = run_sql(sql, values)
+
+    for row in results:
+        country = country_repository.select(row['country_id'])
+        city = City(row['name'], country, row['visited'], row['wishlist'], row['id'])
+        cities.append(city)
+    return cities
