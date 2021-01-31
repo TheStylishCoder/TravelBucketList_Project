@@ -55,3 +55,15 @@ def cities(country):
         city = City(row['name'], row['country_id'], row['visited'], row['wishlist'], row['id'])
         cities.append(city)
     return cities 
+
+def visited():
+    countries = []
+
+    sql = "SELECT * FROM countries WHERE visited = %s"
+    values = [True]
+    results = run_sql(sql, values)
+
+    for row in results:
+        country = Country(row['name'], row['visited'], row['wishlist'], row['id'])
+        countries.append(country)
+    return countries

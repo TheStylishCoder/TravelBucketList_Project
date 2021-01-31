@@ -6,8 +6,20 @@
     <title>Document</title>
 </head>
 <body>
-    {% block content %}
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/countries">Countries</a></li>
+                <li><a href="/cities">Cities</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
 
-    {% endblock %}
+        {% endblock %}
+    </main>
+    
 </body>
 </html>
