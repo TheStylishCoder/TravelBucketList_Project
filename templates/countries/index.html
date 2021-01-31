@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Countries</h1>
+
+<table>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th>Visited</th>
+      <th></th>
+      <th>Wishlist</th>
+    </tr>
+    {% for country in countries %}
+    <tr>
+      <td><a href="/countries/{{ country.id }}"> {{country.name}} </a></td>
+      <td>|</td>
+      <td>{{ country.visited }}</td>
+      <td>|</td>
+      <td>{{ country.wishlist }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% endblock %}
