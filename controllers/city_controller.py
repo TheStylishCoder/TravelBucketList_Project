@@ -53,4 +53,5 @@ def create_city():
 
 @cities_blueprint.route("/cities/<id>/delete", methods=['POST'])
 def delete_city(id):
-    
+    city_repository.delete(id)
+    return redirect('/cities')
