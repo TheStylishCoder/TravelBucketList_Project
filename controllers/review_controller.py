@@ -32,3 +32,23 @@ def update_review(id):
     review = Review(title, content, attraction, id)
     review_repository.update(review)
     return redirect("/reviews")
+
+@reviews_blueprint.route("/reviews/new", methods=['GET'])
+def new_review():
+    attractions = attraction_repository.select_all()
+    return render_template("reviews/new.html", attractions = attractions)
+
+@reviews_blueprint.route("/reviews", methods=['POST'])
+def create_review():
+    title = request.form['title']
+    content= request.form['content']
+    attraction_id = request.form['attraction_id']
+    attraction = attraction_repository.select(attraction_id)
+    review = Review(title, content, attraction)
+    review_repository.save(review)
+    return redirect('/reviews')
+
+@reviews_blueprint.route("/review/<id>/delete", methods=['POST'])
+def delete_review(id):
+    review_repository.delete(id)
+    return redirect('/reviews')

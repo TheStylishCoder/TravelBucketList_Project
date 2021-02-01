@@ -8,6 +8,8 @@
 <p>Content: {{review.content}}</p>
 <p>Attraction: {{review.attraction.name}}</p>
 <a href="reviews/{{review.id}}/edit">Edit</a>
+<form action="/review/{{review.id}}/delete" method="POST"><button>Delete</button></form>
+<br>
 <br>
 {% endfor %}
 <br>
