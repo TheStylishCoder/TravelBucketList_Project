@@ -44,3 +44,15 @@ def create_country():
     country_repository.save(country)
     return redirect("/countries")
 
+@countries_blueprint.route("/countries/search", methods=['GET'])
+def search_for_country():
+    return render_template("countries/search.html")
+
+@countries_blueprint.route("/countries/search_results", methods=['POST'])
+def search_results():
+    search = request.form['search']
+    print(search)
+    countries = country_repository.search(search)
+    return render_template("/countries/search_results.html", countries = countries)
+
+

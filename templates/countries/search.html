@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form action="/countries/search_results" method="post">
+    <div>
+        <label for="search">Input Your Search Here:</label>
+        <input type="text" id="search" name="search" placeholder="Search" required autofocus>
+    </div>
+    <button type="submit">Search</button>
+</form>
+
+{% endblock %}
