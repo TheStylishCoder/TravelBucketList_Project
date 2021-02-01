@@ -3,22 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>The Travel List</title>
 
     <link rel="stylesheet" href="/static/css/main.css">
     <link rel="stylesheet" href="/static/css/home.css">
 </head>
 <body>
     <header>
-        <img src="/static/css/Header.png">
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/countries">Countries</a></li>
-                <li><a href="/cities">Cities</a></li>
-                <li><a href="/attractions">Things To Do</a></li>
-            </ul>
-        </nav>
+        <div class="bg-img">
+            <div class="menu-container">
+                <a href="/countries">Countries</a>
+                <a href="/cities">Cities</a>
+                <a href="/attractions">Things To Do</a>
+            </div>
+        </div>
+        <div class="bar">
+            <a href="/">Home</a>
+            <a href="/reviews">My Travel Journal</a>
+        </div>
+        
     </header>
     <main>
         {% block content %}
