@@ -67,3 +67,13 @@ def show_wishlist():
     countries = country_repository.wishlist()
     cities = city_repository.wishlist()
     return render_template("wishlist/index.html", countries = countries, cities = cities)
+
+@cities_blueprint.route("/cities/search", methods=['GET'])
+def search_for_city():
+    return render_template("cities/search.html")
+
+@cities_blueprint.route("/cities/search_results", methods=['POST'])
+def search_results():
+    search = request.form['search']
+    cities = city_repository.search(search)
+    return render_template("/cities/search_results.html", cities = cities)

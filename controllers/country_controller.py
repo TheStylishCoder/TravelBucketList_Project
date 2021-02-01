@@ -51,7 +51,6 @@ def search_for_country():
 @countries_blueprint.route("/countries/search_results", methods=['POST'])
 def search_results():
     search = request.form['search']
-    print(search)
     countries = country_repository.search(search)
     return render_template("/countries/search_results.html", countries = countries)
 
