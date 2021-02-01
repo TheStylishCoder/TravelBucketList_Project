@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Reviews</h1>
+
+{% for review in reviews %}
+<p>Title:<a href="/reviews/{{review.id}}"> {{review.title}}</a></p>
+<p>Content: {{review.content}}</p>
+<p>Attraction: {{review.attraction.name}}</p>
+<a href="reviews/{{review.id}}/edit">Edit</a>
+<br>
+{% endfor %}
+<br>
+
+
+  <a href="/reviews/new">Add Review</a>
+  {% endblock %}

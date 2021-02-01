@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form action="/reviews/{{review.id}}" method="post">
+    <div>
+        <label for="title">Title:</label>
+        <input type="text" id="title" value="{{review.title}}" name="title" required autofocus>
+    </div>
+    <br>
+    <div>
+        <label for="content">Content</label>
+        <input type="text" id="content" value="{{review.content}}" name="content" required>
+    </div>
+    <div>
+        <label for='attraction'>Attraction:</label>
+        <select name='attraction_id' id='attraction'>
+            {% for attraction in attractions %}
+                <option value="{{attraction.id}}" {% if review.attraction.id == attraction.id %} selected="selected" {% endif %}>{{attraction.name}}</option>
+            {% endfor %}
+        </select>    
+    </div>
+  
+    <button type="submit">Edit Review</button>
+</form>
+
+{% endblock %}
