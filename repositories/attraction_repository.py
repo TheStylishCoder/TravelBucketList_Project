@@ -59,3 +59,15 @@ def free_entry():
         attraction = Attraction(row['name'], row['category'], city, row['entry_fee'], row['id'])
         attractions.append(attraction)
     return attractions
+
+def search(search):
+    attractions = []
+    sql = "SELECT * FROM attractions WHERE category iLIKE %s"
+    values = [f'%{search}%']
+    results = run_sql(sql, values)
+
+    for row in results:
+        city = city_repository.select(row['city_id'])
+        attraction = Attraction(row['name'], row['category'], city, row['entry_fee'], row['id'])
+        attractions.append(attraction)
+    return attractions

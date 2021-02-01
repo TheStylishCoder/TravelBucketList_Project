@@ -97,6 +97,7 @@ def search(search):
     results = run_sql(sql, values)
 
     for row in results:
-        city = City(row['name'], row['visited'], row['wishlist'], row['id'])
+        country = country_repository.select(row['country_id'])
+        city = City(row['name'], country, row['visited'], row['wishlist'], row['id'])
         cities.append(city)
     return cities

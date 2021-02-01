@@ -60,3 +60,13 @@ def show_free():
     attractions = attraction_repository.free_entry()
     return render_template("attractions/show_free.html", attractions = attractions)
 
+@attractions_blueprint.route("/attractions/search", methods=['GET'])
+def search_for_attraction():
+    return render_template("attractions/search.html")
+
+@attractions_blueprint.route("/attractions/search_results", methods=['POST'])
+def search_results():
+    search = request.form['search']
+    attractions = attraction_repository.search(search)
+    return render_template("/attractions/search_results.html", attractions = attractions)
+
