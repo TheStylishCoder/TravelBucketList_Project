@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="page-content">
+    <h3>Search results:</h3>
+
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for country in countries %}
+            <tr>
+                <td><a class="link" href="/countries/{{country.id}}">{{country.name}}</a></td>
+            </tr>
+            {% endfor %}
+            {% for city in cities %}
+            <tr>
+                <td><a class="link" href="/cities/{{city.id}}">{{city.name}}</a></td>
+            </tr>
+            {% endfor %}
+            {% for attraction in attractions %}
+            <tr>
+                <td><a class="link" href="/attractions/{{attraction.id}}">{{attraction.name}}</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </ul>
+</div>
+
+{% endblock %}

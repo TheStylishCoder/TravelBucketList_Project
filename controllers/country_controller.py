@@ -57,6 +57,6 @@ def search_for_country():
 def search_results():
     search = request.form['search']
     countries = country_repository.search(search)
-    return render_template("/countries/search_results.html", countries = countries)
+    return render_template("results.html", countries = countries)
 
 

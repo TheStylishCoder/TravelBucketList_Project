@@ -68,5 +68,5 @@ def search_for_attraction():
 def search_results():
     search = request.form['search']
     attractions = attraction_repository.search(search)
-    return render_template("/attractions/search_results.html", attractions = attractions)
+    return render_template("results.html", attractions = attractions)
 

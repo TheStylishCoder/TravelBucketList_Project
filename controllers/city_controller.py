@@ -65,4 +65,4 @@ def search_for_city():
 def search_results():
     search = request.form['search']
     cities = city_repository.search(search)
-    return render_template("/cities/search_results.html", cities = cities)
+    return render_template("results.html", cities = cities)

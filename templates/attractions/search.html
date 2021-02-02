@@ -1,12 +1,20 @@
 {% extends "base.html" %}
 {% block content %}
+<div class="page-content">
+    <h3>Search for a Type of Attraction</h3>
+    <p>Eg. 'museum', 'historical sight', 'sports'</p>
 
-<form action="/attractions/search_results" method="post">
-    <div>
-        <label for="search">Input Your Search Here:</label>
-        <input type="text" id="search" name="search" placeholder="Search" required autofocus>
-    </div>
-    <button type="submit">Search</button>
-</form>
 
+    <form action="/attractions/search_results" method="post">
+        <div class="input-container">
+            <label for="search">Input Your Search Here:</label>
+            <input class="input-field" type="text" id="search" name="search" placeholder="Search" required>
+        </div>
+        <br>
+
+        <button class="button" type="submit">Search</button>
+    </form>
+    <br>
+    <br>
+</div>
 {% endblock %}
