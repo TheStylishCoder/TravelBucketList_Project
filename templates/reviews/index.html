@@ -2,19 +2,36 @@
 
 {% block content %}
 <div class="page-content">
-  <h1>Reviews</h1>
-  <a href="/reviews/new"><button class="button">Add Review</button></a>
-
-  {% for review in reviews %}
-  <p>Title:<a href="/reviews/{{review.id}}"> {{review.title}}</a></p>
-  <p>Content: {{review.content}}</p>
-  <p>Attraction: {{review.attraction.name}}</p>
-  <a href="reviews/{{review.id}}/edit"><button class="button">Edit</button></a>
-  <form action="/review/{{review.id}}/delete" method="POST"><button class="button">Delete</button></form>
   <br>
   <br>
-  {% endfor %}
-  <br>
+  <div class="grid-container">
+    <div class="item1">
+      <img src="/static/images/Profile.PNG" alt="A profile picture example" style="width:auto;height:300px">
+    </div>
+    <div class="item2">
+      <a href="/visited">Places I've Been</a>
+      <a href="/wishlist">Places on My Wishlist</a>
+    </div>
+    <div class="item3">
+      <img src="/static/images/Fernweh.PNG" alt="Fernweh dictionary description" style="width:autho;height:300px">
+    </div>
+    <div class="item4">
+      <h1>Reviews & Notes</h1>
+      <a href="/reviews/new"><button class="button">Add Review</button></a>
+      <br>
+      <hr>
+      <br>
+      {% for review in reviews %}
+      <a href="/reviews/{{review.id}}"> {{review.title}}</a>
+      <p>{{review.content}}</p>
+      <p>Attraction: {{review.attraction.name}}</p>
+      <a href="reviews/{{review.id}}/edit"><button class="button">Edit</button></a>
+      <form action="/review/{{review.id}}/delete" method="POST"><button class="button">Delete</button></form>
+      <br>
+      <br>
+      {% endfor %}
+    </div>
+  </div>
 
 
   
