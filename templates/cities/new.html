@@ -1,35 +1,44 @@
 {% extends "base.html" %}
 {% block content %}
+<div class="page-content">
+    <h3>Add a City To The List</h3>
+    <p>Please complete the form to add a new city to your available destination list. You will need to select a country from the dropdown list. If you can't see the country you are looking for then you will need to add a new country. Click on the <b>Countries</b> link at the top of the page.</p>
 
-<form action="/cities" method="post">
-    <div>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" placeholder="Name" required autofocus>
-    </div>
-    <div>
-        <label for='country'>Country:</label>
-        <select name='country_id' id='country'>
+
+    <form action="/cities" method="post">
+        <div class="input-container">
+            <label for="name">Name: </label>
+            <input class="input-field" type="text" id="name" name="name" placeholder="Name of City" required>
+        </div>
+        <div class="input-container">
+            <label for='country'>Country:</label>
+            <select name='country_id' id='country'>
             {% for country in countries %}
                 <option value="{{country.id}}">{{country.name}}</option>
             {% endfor %}
-        </select>    
-    </div>
-    <div>
-        <label for="visited">Visited:</label>
-        <select name="visited" id="visited">
-            <option value="true">True</option>
-            <option value="false">False</option>
-        </select>
-    </div>
-    <div>
-        <label for="wishlist">Wishlist:</label>
-        <select name="wishlist" id="wishlist">
-            <option value="true">True</option>
-            <option value="false">False</option>
-        </select>
-    </div>
+            </select>    
+        </div>
+        <div class="input-container">
+            <label for="visited">Visited: </label>
+            <select name="visited" id="visited">
+                <option value="true">True</option>
+                <option value="false">False</option>
+            </select>
+        </div>
+        <div class="input-container">
+            <label for="wishlist">Wishlist: </label>
+            <select name="wishlist" id="wishlist">
+                <option value="true">True</option>
+                <option value="false">False</option>
+            </select>
+        </div>
+        <br>
     
-    <button type="submit">Add City</button>
-</form>
+        <button class="button" type="submit">Add City</button>
+    </form>
+    <br>
+    <br>
+</div>
 
 {% endblock %}
+

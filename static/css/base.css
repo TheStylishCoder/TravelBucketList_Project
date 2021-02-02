@@ -2,6 +2,12 @@ body {
     margin: 0% ;
 }
 
+.page-content {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+
 .bg-img {
     background-image: url("/static/css/Header.png");
     background-repeat: no-repeat;
