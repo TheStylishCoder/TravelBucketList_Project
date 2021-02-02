@@ -36,3 +36,13 @@ body {
     margin-left: 30px;
     
 }
+
+body > footer {
+    background-color: rgb(62, 111, 202);
+    padding: 50px;
+}
+
+body > footer > p {
+    text-align: center;
+    color: oldlace;
+}

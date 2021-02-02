@@ -1,0 +1,39 @@
+.page-content {
+    padding-left: 30px;
+}
+
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    min-width: 400px;
+}
+
+.styled-table thead tr {
+    background-color: rgb(166, 211, 209);
+    color: white;
+    text-align: center;
+
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr:hover {
+    background-color: rgb(99, 147, 236);
+}
+
+.styled-table tbody tr {
+    text-align: center;
+}
+
+.styled-table tbody tr td a {
+    color: black 
+}
+
+.button {
+    background-color: transparent;
+    cursor: pointer;
+}
