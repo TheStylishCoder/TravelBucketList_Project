@@ -1,19 +1,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Reviews</h1>
+<div class="page-content">
+  <h1>Reviews</h1>
+  <a href="/reviews/new"><button class="button">Add Review</button></a>
 
-{% for review in reviews %}
-<p>Title:<a href="/reviews/{{review.id}}"> {{review.title}}</a></p>
-<p>Content: {{review.content}}</p>
-<p>Attraction: {{review.attraction.name}}</p>
-<a href="reviews/{{review.id}}/edit">Edit</a>
-<form action="/review/{{review.id}}/delete" method="POST"><button>Delete</button></form>
-<br>
-<br>
-{% endfor %}
-<br>
+  {% for review in reviews %}
+  <p>Title:<a href="/reviews/{{review.id}}"> {{review.title}}</a></p>
+  <p>Content: {{review.content}}</p>
+  <p>Attraction: {{review.attraction.name}}</p>
+  <a href="reviews/{{review.id}}/edit"><button class="button">Edit</button></a>
+  <form action="/review/{{review.id}}/delete" method="POST"><button class="button">Delete</button></form>
+  <br>
+  <br>
+  {% endfor %}
+  <br>
 
 
-  <a href="/reviews/new">Add Review</a>
-  {% endblock %}
+  
+</div>
+{% endblock %}

@@ -1,33 +1,40 @@
 {% extends "base.html" %}
 {% block content %}
+<div class="page-content">
+    <h3>Add an Attraction To The List</h3>
+    <p>Please complete the form to add a new attraction to your available things to do list. You will need to select a city from the dropdown list. If you can't see the city you are looking for then you will need to add a new city. Click on the <b>Cities</b> link at the top of the page.</p>
 
-<form action="/attractions" method="post">
-    <div>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" placeholder="Name" required autofocus>
-    </div>
-    <div>
-        <label for="category">Category:</label>
-        <input type="text" id="category" name="category" placeholder="Category" required>
-    </div>
-    <div>
-        <label for='city'>City:</label>
-        <select name='city_id' id='city'>
+
+    <form action="/attractions" method="post">
+        <div class="input-container">
+            <label for="name">Name: </label>
+            <input class="input-field" type="text" id="name" name="name" placeholder="Name of Attraction" required>
+        </div>
+        <div class="input-container">
+            <label for="category">Category: </label>
+            <input class="input-field" type="text" id="category" name="category" placeholder="Type of attraction" required>
+        </div>
+        <div class="input-container">
+            <label for='city'>City:</label>
+            <select name='city_id' id='city'>
             {% for city in cities %}
                 <option value="{{city.id}}">{{city.name}}</option>
             {% endfor %}
-        </select>    
-    </div>
-    <div>
-        <label for="entry_fee">Entry Fee:</label>
-        <select name="entry_fee" id="entry_fee">
-            <option value="true">True</option>
-            <option value="false">False</option>
-        </select>
-    </div>
+            </select>
+        </div>
+        <div class="input-container">
+            <label for="entry_fee">Entry Fee:</label>
+            <select name="entry_fee" id="entry_fee">
+                <option value="true">True</option>
+                <option value="false">False</option>
+            </select>
+        </div>
+        <br>
     
-    
-    <button type="submit">Add Attraction</button>
-</form>
+        <button class="button" type="submit">Add Attraction</button>
+    </form>
+    <br>
+    <br>
+</div>
 
 {% endblock %}

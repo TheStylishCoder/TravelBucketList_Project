@@ -1,32 +1,40 @@
 {% extends "base.html" %}
 {% block content %}
+<div class="page-content">
+    <h3>Edit {{attraction.name}}</h3>
+    <p>Please complete the form to update this attraction.</p>
 
-<form action="/attractions/{{attraction.id}}" method="post">
-    <div>
-        <label for="name">Name:</label>
-        <input type="text" id="name" value="{{attraction.name}}" name="name" required autofocus>
-    </div>
-    <br>
-    <div>
-        <label for="category">Category:</label>
-        <input type="text" id="category" value="{{attraction.category}}" name="category" required>
-    </div>
-    <div>
-        <label for='city'>City:</label>
-        <select name='city_id' id='city'>
+
+    <form action="/attractions/{{attraction.id}}" method="post">
+        <div class="input-container">
+            <label for="name">Name:</label>
+            <input class="input-field" type="text" id="name" value="{{attraction.name}}" name="name" required>
+        </div>
+        <div class="input-container">
+            <label for="category">Category:</label>
+            <input type="text" id="category" value="{{attraction.category}}" name="category" required>
+        </div>
+        <div class="input-container">
+            <label for='city'>City:</label>
+            <select name='city_id' id='city'>
             {% for city in cities %}
                 <option value="{{city.id}}" {% if attraction.city.id == city.id %} selected="selected" {% endif %}>{{city.name}}</option>
             {% endfor %}
-        </select>    
-    </div>
-    <div>
-        <label for="entry_fee">Entry Fee:</label>
-        <select name="entry_fee" id="entry_fee">
-            <option value="true" {% if attraction.entry_fee == True %} selected="selected" {% endif %}>True</option>
-            <option value="false" {% if attraction.entry_fee == False %} selected="selected" {% endif %}>False</option>
-        </select>
-    </div>
-    <button type="submit">Edit Attraction</button>
-</form>
+        </select> 
+        </div>
+        <div class="input-container">
+            <label for="entry_fee">Entry Fee:</label>
+            <select name="entry_fee" id="entry_fee">
+                <option value="true" {% if attraction.entry_fee == True %} selected="selected" {% endif %}>True</option>
+                <option value="false" {% if attraction.entry_fee == False %} selected="selected" {% endif %}>False</option>
+            </select>
+        </div>
+        <br>
+    
+        <button class="button" type="submit">Edit Attraction</button>
+    </form>
+    <br>
+    <br>
+</div>
 
 {% endblock %}
