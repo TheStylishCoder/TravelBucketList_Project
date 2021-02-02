@@ -1,24 +1,36 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<form action="/reviews" method=post>
-    <div>
-        <label for="title">Title:</label>
-        <input type="text" id="title" name="title" placeholder="Title" required autofocus>
-    </div>
-    <div>
-        <label for="content">Content:</label>
-        <input type="textarea" id="content" name="content" rows="8" cols="33" placeholder="Write review here..." required>
-    </div>
-    <div>
-        <label for="attraction_id">Attraction:</label>
-        <select name="attraction_id" id="attraction">
-            {% for attraction in attractions %}
-                <option value="{{attraction.id}}">{{attraction.name}}</option>
-            {% endfor %}
-        </select>
-    </div>
-    <button type="submit">Add Review</button>
-</form>
+<div class="page-content">
+    <h3>Add an Entry</h3>
+    <p>Please complete the form to add a new entry to your travel journal. It could be a simple note to remind yourself to do something once you are there or a review of a place you have already visited.</p>
+    <p>You will need to select an attraction from the dropdown list. If you can't see the attraction you are looking for then you will need to add a new attraction. Click on the <b>Things To Do</b> link at the top of the page.</p>
+
+
+    <form action="/reviews" method="post">
+        <div class="input-container">
+            <label for="title">Title:</label>
+            <input class="input-field" type="text" id="title" name="title" placeholder="Title" required>
+        </div>
+        <div>
+            <label for="content">Content:</label>
+            <textarea name="content" id="content" placeholder="Write content here..." cols="30" rows="50"></textarea>
+        </div>
+        <br>
+        <div>
+            <label for="attraction_id">Attraction:</label>
+            <select name="attraction_id" id="attraction">
+                {% for attraction in attractions %}
+                    <option value="{{attraction.id}}">{{attraction.name}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <br>
+    
+        <button class="button" type="submit">Add Entry</button>
+    </form>
+    <br>
+    <br>
+</div>
 
 {% endblock %}

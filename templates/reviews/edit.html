@@ -1,26 +1,34 @@
 {% extends "base.html" %}
 {% block content %}
 
-<form action="/reviews/{{review.id}}" method="post">
-    <div>
-        <label for="title">Title:</label>
-        <input type="text" id="title" value="{{review.title}}" name="title" required autofocus>
-    </div>
+<div class="page-content">
+    <h3>Edit {{review.title}}</h3>
+    <p>Please complete the form to update this entry.</p>
+
+
+    <form action="/reviews/{{review.id}}" method="post">
+        <div class="input-container">
+            <label for="title">Title:</label>
+            <input class="input-field" type="text" id="title" value="{{review.title}}" name="title" required>
+        </div>
+        <div class="input-container">
+            <label for="content">Content:</label>
+            <textarea name="content" id="content" value="{{review.content}}" placeholder="Write content here..." cols="30" rows="50"></textarea>
+        </div>
+        <div class="input-container">
+            <label for='attraction'>Attraction:</label>
+            <select name='attraction_id' id='attraction'>
+                {% for attraction in attractions %}
+                    <option value="{{attraction.id}}" {% if review.attraction.id == attraction.id %} selected="selected" {% endif %}>{{attraction.name}}</option>
+                {% endfor %}
+            </select>    
+        </div>
+        <br>
+    
+        <button class="button" type="submit">Edit Entry</button>
+    </form>
     <br>
-    <div>
-        <label for="content">Content</label>
-        <input type="text" id="content" value="{{review.content}}" name="content" required>
-    </div>
-    <div>
-        <label for='attraction'>Attraction:</label>
-        <select name='attraction_id' id='attraction'>
-            {% for attraction in attractions %}
-                <option value="{{attraction.id}}" {% if review.attraction.id == attraction.id %} selected="selected" {% endif %}>{{attraction.name}}</option>
-            {% endfor %}
-        </select>    
-    </div>
-  
-    <button type="submit">Edit Review</button>
-</form>
+    <br>
+</div>
 
 {% endblock %}

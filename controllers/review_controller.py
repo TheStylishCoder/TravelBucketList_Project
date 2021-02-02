@@ -4,6 +4,8 @@ from flask import Blueprint
 from models.review import Review
 import repositories.review_repository as review_repository
 import repositories.attraction_repository as attraction_repository
+import repositories.city_repository as city_repository
+import repositories.country_repository as country_repository
 
 reviews_blueprint = Blueprint("reviews", __name__)
 
@@ -52,3 +54,15 @@ def create_review():
 def delete_review(id):
     review_repository.delete(id)
     return redirect('/reviews')
+
+@reviews_blueprint.route("/review/visited", methods=['GET'])
+def show_visited():
+    countries = country_repository.visited()
+    cities = city_repository.visited()
+    return render_template("visited/index.html", countries = countries, cities = cities)
+
+@reviews_blueprint.route("/review/wishlist", methods=['GET'])
+def show_wishlist():
+    countries = country_repository.wishlist()
+    cities = city_repository.wishlist()
+    return render_template("wishlist/index.html", countries = countries, cities = cities)

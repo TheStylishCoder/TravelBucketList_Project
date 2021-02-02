@@ -1,16 +1,30 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="page-content">
+    <h3>Attractions With No Entry Fee</h3>
 
-{% for attraction in attractions %}
-    <p>Name: {{attraction.name}}</p>
-    <p>Category: {{attraction.category}}</p>
-    <p>City: {{attraction.city.name}}</p>
-    <p>Entry Fee: {{attraction.entry_fee}}</p>
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Category</th>
+                <th>City</th>
+                <th>Entry Fee</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for attraction in attractions %}
+            <tr>
+                <td><a class="link" href="/attractions/{{attraction.id}}">{{attraction.name}}</a></td>
+                <td>{{ attraction.category }}</td>
+                <td>{{ attraction.name }}</td>
+                <td>{{ attraction.entry_fee }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
     <br>
     <br>
-{% endfor %}
-
-
-
+</div>
 {% endblock %}

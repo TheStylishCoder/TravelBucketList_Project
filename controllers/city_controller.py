@@ -56,17 +56,6 @@ def delete_city(id):
     city_repository.delete(id)
     return redirect('/cities')
 
-@cities_blueprint.route("/visited", methods=['GET'])
-def show_visited():
-    countries = country_repository.visited()
-    cities = city_repository.visited()
-    return render_template("visited/index.html", countries = countries, cities = cities)
-
-@cities_blueprint.route("/wishlist", methods=['GET'])
-def show_wishlist():
-    countries = country_repository.wishlist()
-    cities = city_repository.wishlist()
-    return render_template("wishlist/index.html", countries = countries, cities = cities)
 
 @cities_blueprint.route("/cities/search", methods=['GET'])
 def search_for_city():

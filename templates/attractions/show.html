@@ -1,11 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="page-content">
+    <br>
+    <p><b>Name:</b> {{attraction.name}}</p>
+    <p><b>Category:</b> {{attraction.category}}</p>
+    <p><b>City:</b> {{attraction.city.name}}</p>
+    <p><b>Entry Fee:</b> {{attraction.entry_fee}}</p>
+    <br>
+    <p>Like the sound of this? Add a note in your <a class="link" href="/reviews">travel journal</a>.</p>
+</div>
 
-<p>Name: {{attraction.name}}</p>
-<p>Category: {{attraction.category}}</p>
-<p>City: {{attraction.city.name}}</p>
-<p>Entry Fee: {{attraction.entry_fee}}</p>
 
 
 

@@ -1,18 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2> {{country.name}} </h2>
-
-
-<h3>Cities:</h3>
-<ul>
-    {% for city in cities %}
-    <li>{{city.name}}</li>
-    <p>Visited: {{city.visited}}</p>
-    <p>Wishlist: {{city.wishlist}}</p>
-    {% endfor %}
-    <br>
-</ul>
+<div class="page-content">
+    <h3>Cities in {{country.name}}:</h3>
+    <ul>
+        {% for city in cities %}
+        <li><a class="link" href="/cities/{{city.id}}">{{city.name}}</a></li>
+        {% endfor %}
+        <br>
+    </ul>
+</div>
 
 
 {% endblock %}
