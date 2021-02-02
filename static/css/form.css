@@ -1,0 +1,15 @@
+.input-container {
+    display: inline-block;
+    width: 50%;
+    margin-bottom: 15px;
+}
+
+
+.input-field {
+    width: 100%;
+    padding: 4px;
+}
+
+select {
+    width: 100%;
+}
