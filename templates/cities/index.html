@@ -1,20 +1,36 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Cities</h1>
+<div class="page-content">
+  <h1>Cities</h1>
+  <a href="/cities/new"><button class="button">Add City</button></a>
 
-{% for city in cities %}
-<p>Name:<a href="/cities/{{city.id}}"> {{city.name}}</a></p>
-<p>Country: {{city.country.name}}</p>
-<p>Visited: {{city.visited}}</p>
-<p>Wishlist: {{city.wishlist}}</p>
-<a href="cities/{{city.id}}/edit">Edit</a>
-<form action="/cities/{{city.id}}/delete" method="POST"><button>Delete</button></form>
-<br>
-<br>
-{% endfor %}
-<br>
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Country</th>
+        <th>Visited</th>
+        <th>Wishlist</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for city in cities %}
+      <tr>
+        <td><a href="/cities/{{city.id}}"> {{city.name}}</a></td>
+        <td>{{city.country.name}}</td>
+        <td>{{city.visited}}</td>
+        <td>{{city.wishlist}}</td>
+        <td><a href="cities/{{city.id}}/edit"><button class="button">Edit</button></a></td>
+        <td><form action="/cities/{{city.id}}/delete" method="POST"><button class="button">Delete</button></form></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <br>
+  <br>
 
-
-  <a href="/cities/new">Add City</a>
-  {% endblock %}
+</div>
+{% endblock %}

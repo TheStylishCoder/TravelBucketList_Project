@@ -1,20 +1,37 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Attractions</h1>
-
-{% for attraction in attractions %}
-<p>Name:<a href="/attractions/{{attraction.id}}"> {{attraction.name}}</a></p>
-<p>Category: {{attraction.category}}</p>
-<p>City: {{attraction.city.name}}</p>
-<p>Entry Fee: {{attraction.entry_fee}}</p>
-<a href="attractions/{{attraction.id}}/edit">Edit</a>
-<form action="/attraction/{{attraction.id}}/delete" method="POST"><button>Delete</button></form>
-<br>
-<br>
-{% endfor %}
-<br>
+<div class="page-content">
 
 
-  <a href="/attractions/new">Add Attraction</a>
-  {% endblock %}
+  <h1>Sights & Attractions</h1>
+  <a href="/attractions/new"><button class="button">Add</button></a>
+
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Category</th>
+        <th>City</th>
+        <th>Entry Fee</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for attraction in attractions %}
+      <tr>
+        <td><a href="/attractions/{{attraction.id}}">{{attraction.name}}</a></td>
+        <td>{{attraction.category}}</td>
+        <td>{{attraction.city.name}}</td>
+        <td>{{attraction.entry_fee}}</td>
+        <td><a href="attractions/{{attraction.id}}/edit"><button class="button">Edit</button></a></td>
+        <td><form action="/attraction/{{attraction.id}}/delete" method="POST"><button class="button">Delete</button></form></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <br>
+  <br>
+</div>
+{% endblock %}
