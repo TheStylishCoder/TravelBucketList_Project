@@ -50,7 +50,7 @@ def update(attraction):
 def free_entry():
     attractions = []
 
-    sql = "SELECT * FROM attractions WHERE entry_fee = %s"
+    sql = "SELECT * FROM attractions WHERE entry_fee = %s ORDER BY category"
     values = [False]
     results = run_sql(sql, values)
 

@@ -28,7 +28,7 @@
       {% for review in reviews %}
       <a href="/reviews/{{review.id}}"> {{review.title}}</a>
       <p>{{review.content}}</p>
-      <p>Attraction: {{review.attraction.name}}</p>
+      <p>Where: {{review.attraction.name}}</p>
       <div class="button-container">
         <a href="reviews/{{review.id}}/edit"><button class="button-journal">Edit</button></a>
         <form action="/review/{{review.id}}/delete" method="POST"><button class="button-journal">Delete</button></form>

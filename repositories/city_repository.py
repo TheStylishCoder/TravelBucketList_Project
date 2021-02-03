@@ -67,7 +67,7 @@ def attractions(city):
 def visited():
     cities = []
 
-    sql = "SELECT * FROM cities WHERE visited = %s"
+    sql = "SELECT * FROM cities WHERE visited = %s ORDER BY name"
     values = [True]
     results = run_sql(sql, values)
 
@@ -80,7 +80,7 @@ def visited():
 def wishlist():
     cities = []
 
-    sql = "SELECT * FROM cities WHERE wishlist = %s"
+    sql = "SELECT * FROM cities WHERE wishlist = %s ORDER BY name"
     values = [True]
     results = run_sql(sql, values)
 
