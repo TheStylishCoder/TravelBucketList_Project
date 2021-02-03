@@ -18,7 +18,7 @@
             <tr>
                 <td><a class="link" href="/attractions/{{attraction.id}}">{{attraction.name}}</a></td>
                 <td>{{ attraction.category }}</td>
-                <td>{{ attraction.name }}</td>
+                <td>{{ attraction.city.name }}</td>
                 {% if attraction.entry_fee == True %}
                     <td><p>Yes</p></td>
                 {% else %}
