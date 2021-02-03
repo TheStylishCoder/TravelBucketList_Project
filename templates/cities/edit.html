@@ -22,15 +22,15 @@
         <div class="input-container">
             <label for="visited">Visited: </label>
             <select name="visited" id="visited">
-                <option value="true" {% if city.visited == True %} selected="selected" {% endif %}>True</option>
-                <option value="false" {% if city.visited == False %} selected="selected" {% endif %}>False</option>
+                <option value="true" {% if city.visited == True %} selected="selected" {% endif %}>Yes</option>
+                <option value="false" {% if city.visited == False %} selected="selected" {% endif %}>No</option>
             </select>
         </div>
         <div class="input-container">
             <label for="wishlist">Wishlist: </label>
             <select name="wishlist" id="wishlist">
-                <option value="true" {% if city.wishlist == True %} selected="selected" {% endif %}>True</option>
-                <option value="false" {% if city.wishlist == False %} selected="selected" {% endif %}>False</option>
+                <option value="true" {% if city.wishlist == True %} selected="selected" {% endif %}>Yes</option>
+                <option value="false" {% if city.wishlist == False %} selected="selected" {% endif %}>No</option>
             </select>
         </div>
         <br>

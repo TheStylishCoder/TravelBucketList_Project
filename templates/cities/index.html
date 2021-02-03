@@ -28,8 +28,16 @@
       <tr>
         <td><a href="/cities/{{city.id}}"> {{city.name}}</a></td>
         <td>{{city.country.name}}</td>
-        <td>{{city.visited}}</td>
-        <td>{{city.wishlist}}</td>
+        {% if city.visited == True %}
+          <td><p>Yes</p></td>
+        {% else %}
+          <td><p>No</p></td>
+        {% endif %}
+        {% if city.wishlist == True %}
+          <td><p>Yes</p></td>
+        {% else %}
+          <td><p>No</p></td>
+        {% endif %}
         <td><a href="cities/{{city.id}}/edit"><button class="button">Edit</button></a></td>
         <td><form action="/cities/{{city.id}}/delete" method="POST"><button class="button">Delete</button></form></td>
       </tr>

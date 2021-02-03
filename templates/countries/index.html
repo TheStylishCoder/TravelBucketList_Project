@@ -27,8 +27,16 @@
       {% for country in countries %}
       <tr>
         <td><a href="/countries/{{ country.id }}"> {{country.name}} </a></td>
-        <td>{{ country.visited }}</td>
-        <td>{{ country.wishlist }}</td>
+        {% if country.visited == True %}
+          <td><p>Yes</p></td>
+        {% else %}
+          <td><p>No</p></td>
+        {% endif %}
+        {% if country.wishlist == True %}
+          <td><p>Yes</p></td>
+        {% else %}
+          <td><p>No</p></td>
+        {% endif %}
         <td><a href="/countries/{{country.id}}/edit"><button class="button">Edit</button></a></td>
         <td><form action="/countries/{{country.id}}/delete" method="POST"><button class="button">Delete</button></form></td>
       </tr>

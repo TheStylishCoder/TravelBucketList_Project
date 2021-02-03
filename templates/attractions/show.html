@@ -6,7 +6,11 @@
     <p><b>Name:</b> {{attraction.name}}</p>
     <p><b>Category:</b> {{attraction.category}}</p>
     <p><b>City:</b> {{attraction.city.name}}</p>
-    <p><b>Entry Fee:</b> {{attraction.entry_fee}}</p>
+    {% if attraction.entry_fee == True %}
+        <p><b>Entry Fee:</b> Yes</p>
+    {% else %}
+        <p><b>Entry Fee:</b> No</p>
+    {% endif %}
     <br>
     <p>Like the sound of this? Add a note in your <a class="link" href="/reviews">travel journal</a>.</p>
 </div>

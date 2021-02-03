@@ -34,7 +34,11 @@
         <td><a href="/attractions/{{attraction.id}}">{{attraction.name}}</a></td>
         <td>{{attraction.category}}</td>
         <td>{{attraction.city.name}}</td>
-        <td>{{attraction.entry_fee}}</td>
+        {% if attraction.entry_fee == True %}
+          <td><p>Yes</p></td>
+        {% else %}
+          <td><p>No</p></td>
+        {% endif %}
         <td><a href="attractions/{{attraction.id}}/edit"><button class="button">Edit</button></a></td>
         <td><form action="/attraction/{{attraction.id}}/delete" method="POST"><button class="button">Delete</button></form></td>
       </tr>
