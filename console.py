@@ -194,7 +194,58 @@ attraction_repository.save(attraction28)
 attraction29 = Attraction("Old Port", "Historic Site", city14)
 attraction_repository.save(attraction29)
 
+attraction30 = Attraction("Colosseum", "Historic Site", city15, True)
+attraction_repository.save(attraction30)
+attraction31 = Attraction("Trevi Fountain", "Historic Site", city15)
+attraction_repository.save(attraction31)
 
+attraction32 = Attraction("Gondola Ride", "Boat Tour", city16, True)
+attraction_repository.save(attraction32)
+attraction33 = Attraction("St Mark's Basilica", "Place of Worship", city16, True)
+attraction_repository.save(attraction33)
+
+attraction34 = Attraction("Ski Flumserberg", "Sports", city17, True)
+attraction_repository.save(attraction34)
+attraction35 = Attraction("Swiss National Museum", "Museum", city17, True)
+attraction_repository.save(attraction35)
+attraction36 = Attraction("Zurich Zoo", "Zoo", city17, True)
+attraction_repository.save(attraction36)
+
+attraction37 = Attraction("Zealandia Wildlife Sanctuary", "Parks & Nature", city18, True)
+attraction_repository.save(attraction37)
+attraction38 = Attraction("Wellington Botanic Garden", "Parks & Nature", city18, True)
+attraction_repository.save(attraction38)
+attraction39 = Attraction("Cuba Street", "Market", city18)
+attraction_repository.save(attraction39)
+
+attraction40 = Attraction("Coronet Peak", "Sports", city19, True)
+attraction_repository.save(attraction40)
+attraction41 = Attraction("Kiwi Birdlife Park", "Parks & Nature", city19, True)
+attraction_repository.save(attraction41)
+attraction42 = Attraction("Ben Lomond", "Parks & Nature", city19)
+attraction_repository.save(attraction42)
+
+attraction43 = Attraction("Hanauma Bay", "Beach", city20)
+attraction_repository.save(attraction43)
+attraction44 = Attraction("Honolulu Zoo", "Zoo", city20, True)
+attraction_repository.save(attraction44)
+
+attraction45 = Attraction("Bangkok Grand Palace", "Historic Site", city21, True)
+attraction_repository.save(attraction45)
+
+attraction46 = Attraction("Giza Pyramids", "Historic Site", city22, True)
+attraction_repository.save(attraction46)
+
+attraction47 = Attraction("Bibliotheca Alexandrina", "Historic Site", city23, True)
+attraction_repository.save(attraction47)
+
+attraction48 = Attraction("CN Tower", "Viewing Platform", city24, True)
+attraction_repository.save(attraction48)
+attraction49 = Attraction("Niagara", "Parks & Nature", city19, True)
+attraction_repository.save(attraction49)
+
+attraction50 = Attraction("Elephanta Caves", "Historic Site", city25)
+attraction_repository.save(attraction50)
 
 # res = attraction_repository.select_all()
 # for attraction in res:
@@ -207,7 +258,8 @@ review1 = Review("Turtles", "Had a lovely time at this park and the best part wa
 review_repository.save(review1)
 review2 = Review("Kelvingrove", "Great park in the grounds of the museum. Found a fantastic pizza place across from the museum!", attraction19)
 review_repository.save(review2)
-
+review3 = Review("Dutch Pancakes", "There was so much to see in the Rijksmuseum but one of the best parts of the day was our breakfast from The Happy Pig!", attraction21)
+review_repository.save(review3)
 
 # res = review_repository.select_all()
 # for review in res:
