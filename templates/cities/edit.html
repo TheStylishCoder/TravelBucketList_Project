@@ -6,7 +6,7 @@
     <p>Please complete the form to update this city.</p>
 
 
-    <form action="/cities/{{city.id}}" method="post">
+    <form class="form" action="/cities/{{city.id}}" method="post">
         <div class="input-container">
             <label for="name">Name:</label>
             <input class="input-field" type="text" id="name" value="{{city.name}}" name="name" required>
@@ -37,8 +37,6 @@
     
         <button class="button" type="submit">Edit City</button>
     </form>
-    <br>
-    <br>
 </div>
 
 {% endblock %}

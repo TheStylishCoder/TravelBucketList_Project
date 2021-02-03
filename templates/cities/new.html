@@ -5,7 +5,7 @@
     <p>Please complete the form to add a new city to your available destination list. You will need to select a country from the dropdown list. If you can't see the country you are looking for then you will need to add a new country. Click on the <b>Countries</b> link at the top of the page.</p>
 
 
-    <form action="/cities" method="post">
+    <form class="form" action="/cities" method="post">
         <div class="input-container">
             <label for="name">Name: </label>
             <input class="input-field" type="text" id="name" name="name" placeholder="Name of City" required>
@@ -36,8 +36,6 @@
     
         <button class="button" type="submit">Add City</button>
     </form>
-    <br>
-    <br>
 </div>
 
 {% endblock %}
