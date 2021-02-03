@@ -1,0 +1,13 @@
+@media (min-width: 720px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 250px 50px 100px 100px 250px auto;
+        column-gap: 30px;
+        row-gap: 10px;
+    
+    }
+
+    
+    
+}
