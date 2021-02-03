@@ -6,7 +6,7 @@
     <p>Please complete the form to update this entry.</p>
 
 
-    <form action="/reviews/{{review.id}}" method="post">
+    <form class="form" action="/reviews/{{review.id}}" method="post">
         <div class="input-container">
             <label for="title">Title:</label>
             <input class="input-field" type="text" id="title" value="{{review.title}}" name="title" required>
@@ -27,8 +27,6 @@
     
         <button class="button" type="submit">Edit Entry</button>
     </form>
-    <br>
-    <br>
 </div>
 
 {% endblock %}
