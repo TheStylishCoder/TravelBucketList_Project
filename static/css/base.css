@@ -9,7 +9,7 @@ body {
 
 
 .bg-img {
-    background-image: url("/static/css/Header.png");
+    background-image: url("/static/images/Header.png");
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 230px;

@@ -27,7 +27,7 @@ def delete(id):
 
 def select_all():
     cities = []
-    sql = "SELECT * FROM cities"
+    sql = "SELECT * FROM cities ORDER BY name"
     results = run_sql(sql)
 
     for row in results:

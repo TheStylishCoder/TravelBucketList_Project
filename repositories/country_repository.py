@@ -21,7 +21,7 @@ def delete(id):
 
 def select_all():
     countries = []
-    sql = "SELECT * FROM countries"
+    sql = "SELECT * FROM countries ORDER BY name"
     results = run_sql(sql)
 
     for row in results:

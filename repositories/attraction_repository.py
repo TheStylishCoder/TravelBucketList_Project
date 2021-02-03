@@ -22,7 +22,7 @@ def delete(id):
 
 def select_all():
     attractions = []
-    sql = "SELECT * FROM attractions"
+    sql = "SELECT * FROM attractions ORDER BY category"
     results = run_sql(sql)
 
     for row in results:
