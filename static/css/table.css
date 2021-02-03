@@ -4,6 +4,7 @@
     min-width: 400px;
     margin-left: auto;
     margin-right: auto;
+    padding: 10px;
 }
 
 .styled-table thead tr {
