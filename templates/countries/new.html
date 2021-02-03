@@ -5,7 +5,7 @@
     <p>Please complete the form to add a new country to your available destination list.</p>
 
 
-    <form action="/countries" method="post">
+    <form class="form" action="/countries" method="post">
         <div class="input-container">
             <label for="name">Name: </label>
             <input class="input-field" type="text" id="name" name="name" placeholder="Name of Country" required>
@@ -28,8 +28,6 @@
     
         <button class="button" type="submit">Add Country</button>
     </form>
-    <br>
-    <br>
 </div>
 
 {% endblock %}

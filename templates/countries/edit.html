@@ -5,7 +5,7 @@
     <p>Please complete the form to update this country.</p>
 
 
-    <form action="/countries/{{country.id}}" method="post">
+    <form class="form" action="/countries/{{country.id}}" method="post">
         <div class="input-container">
             <label for="name">Name:</label>
             <input class="input-field" type="text" id="name" value="{{country.name}}" name="name" required>
@@ -28,8 +28,6 @@
     
         <button class="button" type="submit">Edit Country</button>
     </form>
-    <br>
-    <br>
 </div>
 
 {% endblock %}
