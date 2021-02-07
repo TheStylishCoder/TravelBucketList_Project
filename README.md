@@ -23,16 +23,18 @@ Build an app to track someone's travel adventures.
  * Any other ideas you might come up with
  
  
- ## Running Instructions
- *Ensure you create a database on your system called travel_list.
- *Use the command Flask Run in your terminal to open the 'web app' in your localhost port.
+ ### Running Instructions
+* After cloning the repository, create a database called "travel list" in PostgreSQL. This can be done with the command createdb travel_list. 
+* Then run the SQL file included to create the tables required. From the directory that this readme file is in, this can be achieved by runnning the command psql -d travel_list -f app/db/travel_list.sql. Seed data has been saved in the 'console.py' file.
+* To start the app, use the command 'flask run' once the first steps are completed. The app can be accessed in your browser at the port specified by your flask instance.
+ 
  
  ## Requirements:
- *Python3
- *pip3
- *psycopg2
- *Flask
- *PostgreSQL
+ * Python3
+ * pip3
+ * psycopg2
+ * Flask
+ * PostgreSQL
  
  ## How To Clone:
  Clone repo: $ https://github.com/TheStylishCoder/TravelBucketList_Project.git.
